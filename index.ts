@@ -27,7 +27,39 @@ You need to describe a movie using an object. The movie has the following detail
 ✅ Task 3: Access the movie’s title using dot notation, and access the release year using bracket notation. 
            (You can log them using `console.log`)
 ******************************************************************/
+//Task 1
+interface moviesType {
+  title: string;
+  director: string | string[];
+  releaseYear: number;
+  genre: string;
+  duration?: number;
+  rating?: string;
+  reviews?: review[];
+  [key: string]: string | number | string[] | undefined | review[] | boolean;
+  platforms?: boolean;
+}
 
+interface review {
+  reviewer: string;
+  comment: string;
+}
+
+const moviesObjc: moviesType = {
+  title: "Everything Everywhere All at Once",
+  director: ["Daniel Kwan", "Daniel Scheinert"],
+  releaseYear: 2022,
+  genre: "Science Fiction",
+  // duration: 106,
+  // rating: "7.8/10",
+  reviews: [
+    { reviewer: "Film Critic", comment: "A wild, genre-bending masterpiece." },
+  ],
+};
+
+console.log(moviesObjc);
+console.log(moviesObjc.title);
+console.log(moviesObjc["releaseYear"]);
 
 /*****************************************************************
 🛠️ Part 2: Updating the Movie Object
@@ -40,8 +72,11 @@ Now let’s say the movie got updated information and we want to add more detail
 
 ✅ Task 6: Update the `releaseYear` from 2022 to 2023 since the movie had a new release.
 ******************************************************************/
+moviesObjc.duration = 139;
+moviesObjc.rating = "R";
+moviesObjc.releaseYear = 2023;
 
-
+console.log(moviesObjc);
 /*****************************************************************
 📚 Part 3: Making the Object More Advanced
 
@@ -65,7 +100,6 @@ Let’s make our movie object even more flexible and realistic!
            Then, update the `Movie` interface to use this `Review[]` for the `reviews` property.
 ******************************************************************/
 
-
 /*****************************************************************
 🎁 Part 4: Index Signatures
 
@@ -82,4 +116,4 @@ Index signatures allow us to define flexible object structures in TypeScript.
 ✅ Step 3: Add a new key named 'Cast' and the value should be a string array of the names of the actors in the movie (["Robin Williams", "Ryan Reynolds"])
 
 
-**/
+******************************************************************/
