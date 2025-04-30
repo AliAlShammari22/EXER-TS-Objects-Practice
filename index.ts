@@ -64,3 +64,22 @@ Let’s make our movie object even more flexible and realistic!
 ✅ Task 9: Create a separate `Review` interface to describe the structure of each review.
            Then, update the `Movie` interface to use this `Review[]` for the `reviews` property.
 ******************************************************************/
+
+
+/*****************************************************************
+🎁 Part 4: Index Signatures
+
+Sometimes we want to create objects where the keys are not fixed ahead of time.
+Index signatures allow us to define flexible object structures in TypeScript.
+
+--- 
+📺 Task 10: Platforms with Boolean Values
+
+✅ Step 1: Modify the interface to allow for index signature so we can add new keys and values
+
+✅ Step 2: Add a new key named 'FilmStudio' and the value should be a string (i.e "Paramount", "Pixar"...etc)
+
+✅ Step 3: Add a new key named 'Cast' and the value should be a string array of the names of the actors in the movie (["Robin Williams", "Ryan Reynolds"])
+
+
+**/
